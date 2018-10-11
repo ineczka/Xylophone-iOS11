@@ -17,7 +17,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
     }
     
     func playSound(soundFileName : String){
-       let soundUrl = Bundle.main.url(forResource: soundFileName , withExtention: "wav")
+       let soundUrl = Bundle.main.url(forResource: soundFileName , withExtension: "wav")
         do {
             audioPlayer =  try AVAudioPlayer(contentsOf: soundUrl!)   
         } 
