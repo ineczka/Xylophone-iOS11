@@ -25,8 +25,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
             print (error)            
         }
         audioPlayer.play()
-        //print(sender.tag)      
-  
+        
   }
 }
 
