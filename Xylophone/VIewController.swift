@@ -12,13 +12,12 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
         super.viewDidLoad()
     }
 
-    @IBAction func notePressed(_ sender: UIButton) { 
-        selectedSoundFileName = soundArray[sender.tag - 1]
-        playSound()         
+    @IBAction func notePressed(_ sender: UIButton) {        
+        playSound(soundFileName: soundArray[sender.tag - 1])         
     }
     
-    func playSound(){
-       let soundUrl = Bundle.main.url(forReseoures: selectedSoundFileName , withExtention: 'wav')
+    func playSound(soundFileName : String){
+       let soundUrl = Bundle.main.url(forReseoures: SoundFileName , withExtention: 'wav')
         do {
             audioPlayer =  try AVAudioPlayer(contentsOf: soundUrl)   
         } 
