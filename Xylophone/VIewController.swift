@@ -4,7 +4,7 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate{    
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer : AVAudioPlayer!
     var selectedSoundFileName : String = ""
     let soundArray = ["note1", "note2", "note3", "note4", "note5","note6","note7"]
     
@@ -22,7 +22,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
             audioPlayer =  try AVAudioPlayer(contentsOf: soundUrl!)   
         } 
         catch {
-            print (error.description)            
+            print (error)            
         }
         audioPlayer.play()
         //print(sender.tag)      
