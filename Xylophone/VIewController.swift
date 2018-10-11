@@ -3,18 +3,28 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController{
+class ViewController: UIViewController, AVAudioPlayerDelegate{
     
-    let url = Bundle.main.url(forReseoures: "note1" , withExtention: 'wav'
+    var player = AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    @IBAction func notePressed(_ sender: UIButton) {   
-        var audioPlayer = AVAudioPlayer()
-        print(sender.tag)        
+    @IBAction func notePressed(_ sender: UIButton) { 
+         
     }
+  func playSound(){
+       let soundUrl = Bundle.main.url(forReseoures: "note1" , withExtention: 'wav')
+        do {
+            audioPlayer =  try AVAudioPlayer(contentsOf: soundUrl)   
+        } 
+        catch {
+            print (error.description)            
+        }
+        audioPlayer.play()
+        //print(sender.tag)      
   
+  }
 }
 
