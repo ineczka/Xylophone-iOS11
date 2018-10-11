@@ -4,8 +4,8 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController, AVAudioPlayerDelegate{    
-    var player = AVAudioPlayer!
-     var selectedSoundFileName : String = ""
+    var audioPlayer = AVAudioPlayer()
+    var selectedSoundFileName : String = ""
     let soundArray = ["note1", "note2", "note3", "note4", "note5","note6","note7"]
     
     override func viewDidLoad() {
@@ -17,9 +17,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate{
     }
     
     func playSound(soundFileName : String){
-       let soundUrl = Bundle.main.url(forReseoures: SoundFileName , withExtention: 'wav')
+       let soundUrl = Bundle.main.url(forResource: soundFileName , withExtention: "wav")
         do {
-            audioPlayer =  try AVAudioPlayer(contentsOf: soundUrl)   
+            audioPlayer =  try AVAudioPlayer(contentsOf: soundUrl!)   
         } 
         catch {
             print (error.description)            
